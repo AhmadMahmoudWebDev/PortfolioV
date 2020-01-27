@@ -6,15 +6,23 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    title: 'Ahmad Mahmoud',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      { name: 'X-UA-Compatible', content: 'IE=edge' },
+      { name: 'msapplication-TileColor', content: '#327E74' },
+      { name: 'msapplication-config', content: '/icons/browserconfig.xml' },
+      { name: 'theme-color', content: '#327E74' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/png', size: '32x32', href: '/icons/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', size: '16x16', href: '/icons/favicon-16x16.png' },
+      { rel: 'apple-touch-icon', size: '180x180', href: '/icons/apple-touch-icon.png' },
+      { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#5bbad5' },
+      { rel: 'shortcut icon', href: '/icons/favicon.ico' },
+      { rel: 'manifest', href: '/icons/site.webmanifest' }
     ]
   },
   /*
@@ -25,6 +33,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -49,7 +58,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -61,6 +70,9 @@ export default {
           success: colors.green.accent3
         }
       }
+    },
+    defaultAssets: {
+      icons: 'fa'
     }
   },
   /*
